@@ -1,0 +1,26 @@
+<!--
+設定路徑
+1. 使用檔案總管進入 "C:\Program Files\MySQL\MySQL Server 8.0\bin"
+    複製其路徑
+2. 開始右鍵/設定/進階系統設定/環境變數/系統變數中找到 path/編輯/新增，然上面那串貼上
+3. 離開DOS, 動新進入DOS, path才會生效
+
+備份
+1. 進入dos
+    d:
+    cd d:\backup
+    mysqldump -u 帳號 -p --routines cloud > cloud20220920.sql
+2. 請確認 d:\backup是否有 cloud20220920.sql, 且容量大小需大於 0
+
+還原
+*模擬資料不見了 : cloud右鍵/drop schema
+1. 使用 workbench新建schema : cloud(建立新的空資料庫)
+2. 進入 DOS
+    d:
+    cd d:\backup
+3. mysql -u 帳號 -p --default-character-set=utf8 cloud < cloud20220920.sql
+4. 回 workbench，cloud右鍵/refresh, 看一下資料表是否有出現
+切記:
+    新建資料庫時，絕對不可以使用中文，因為檔案會以utf8碼當檔名，無法備份
+    但是資料表可以用中文
+-->

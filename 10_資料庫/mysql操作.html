@@ -1,0 +1,49 @@
+<!--
+設定連線
+    1. 開啟workbench
+    2. "+"
+    3. connection Name : localhost
+       HostName : localhost
+       UserName : 帳號
+       Store in vault : 密碼
+連線到 mahaljsp
+    connection Name : mahaljsp
+    HostName : mahaljsp.asuscomm.com
+    UserName : lcc
+    Store in vault : lcc0507
+建立資料庫 :
+    1. create new Schema
+    2. name : cloud(資料庫名，絕對不可以使用中文)
+    3. Charset : utf8 / utf8_unicode_ci
+建立資料表 :
+    1. cloud/tables/create table
+    2. table name : 員工資料表(資料表可以用中文)
+    3. 欄位 :
+        id  int     AI
+        姓名 varchar(10)
+SQL四大語法CURD(Create, Update, Read, Delete)
+    1. 新增
+        use cloud;
+        insert into 員工資料表(姓名, 地址, 電話, 生日) values
+        ('張無忌', '台中市', '0989123456', '1980-01-01'),
+        ('周星星','香港','0989125456','1960-01-10'),
+        ('許茹芸','台北市','0989888456','1970-11-10')
+    2. 查詢
+        use cloud;
+        select * from 員工資料表;
+        select * from 員工資料表 where 地址 = '台中市';
+        select * from 員工資料表 where 地址 like '%市';
+        select * from 員工資料表 where 生日 >='1970-01-01';
+        ctrl+shift+enter : 執行快速鍵
+    3. 修改
+        use cloud;
+        update 員工資料表 set 生日='1990-01-01' where id=1;
+        請注意，如果沒有 where的話，所有的資料都會變更
+        喝酒不玩資料庫，玩資料庫絕對不能喝酒
+    4. 刪除
+        use cloud;
+        set sql_safe_updates=0;
+        delete from 員工資料表 where 地址='香港';
+        set sql_safe_updates=1;
+
+-->
