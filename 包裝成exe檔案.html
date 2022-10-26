@@ -1,0 +1,21 @@
+<!--
+包裝成可執行檔 : exe
+1. 系統級安裝套件
+    進入 DOS模式
+    pip install pyqt5 pyinstaller
+2. 在dos視窗進入專案之下
+    d: 切換磁碟
+    cd .. 回上一層
+    cd d:\project\python 進入目錄
+    dir 查看檔案
+3.  編譯具有除錯視窗的exe檔
+    pyinstaller --hidden-import=queue -F Game.py
+    編譯好，exe檔置於 專案\dist之下
+    專案\build 為暫存檔存放位置
+4. 編譯沒有除錯視窗的exe檔
+    a. 刪除 dist及 build
+    b. pyinstaller --hidden-import=queue -w -F Game.py
+防毒軟体，本身就是病毒，請移除
+VmWare : 首選
+Virtual Box : 不用錢，但不好用
+-->
